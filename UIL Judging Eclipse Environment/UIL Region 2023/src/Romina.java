@@ -19,7 +19,6 @@ public class Romina {
 			int r = Integer.parseInt(st.nextToken());
 			int c = Integer.parseInt(st.nextToken());
 			int[][] mat = new int[r][c];
-			boolean[][] visited = new boolean[r][c];
 			for(int i = 0; i < r; i++) {
 				mat[i] = Arrays.asList(file.readLine().split("\t")).stream().map(str -> Integer.parseInt(str)).mapToInt(Integer::intValue).toArray();
 			}
@@ -32,7 +31,6 @@ public class Romina {
 				for(int i = offset; i < c - offset; i++) {
 					total += mat[offset][i];
 					ct++;
-					visited[offset][i] = true;
 				}
 				if(ct != 0) {
 					out.printf("%.2f ", total / ct);
